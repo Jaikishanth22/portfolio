@@ -242,8 +242,9 @@ export default function App() {
           </ul>
           <a 
             className="nav-resume resume-link" 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}
+            href="/resume.pdf" 
+            target="_blank"
+            rel="noopener noreferrer"
             onMouseEnter={() => setIsHovering(true)} 
             onMouseLeave={() => setIsHovering(false)}
           >
@@ -276,8 +277,10 @@ export default function App() {
         <a className="nav-link" href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
         <a 
           className="nav-resume resume-link" 
-          href="#" 
-          onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setIsModalOpen(true); }}
+          href="/resume.pdf" 
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setIsMenuOpen(false)}
           style={{ marginTop: '8px', width: 'fit-content' }}
         >
           Resume ↗
@@ -360,8 +363,8 @@ export default function App() {
             </a>
             <a 
               className="btn-secondary magnetic resume-link" 
-              href="#"
-              onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}
+              href="/resume.pdf"
+              download="Jai_Kishanth_Resume.pdf"
               onMouseMove={handleMagneticMove}
               onMouseLeave={handleMagneticLeave}
               onMouseEnter={() => setIsHovering(true)} 
