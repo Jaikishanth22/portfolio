@@ -3,6 +3,7 @@ import GradientText from './components/ui/GradientText';
 import LogoLoop from './components/ui/LogoLoop';
 import Prism from './components/ui/Prism';
 import { PixelCanvas } from './components/ui/pixel-logo-grid';
+import FaultyTerminal from './components/ui/FaultyTerminal';
 
 // Tech Icons
 import {
@@ -294,9 +295,6 @@ export default function App() {
         <div className="hero-blob hero-blob-1" />
         <div className="hero-blob hero-blob-2" />
         <div className="hero-blob hero-blob-3" />
-        <div className="lively-shape shape-1" />
-        <div className="lively-shape shape-2" />
-        <div className="lively-shape shape-3" />
 
         <div className="hero-left">
           <span className="hero-label">
@@ -306,7 +304,7 @@ export default function App() {
 
           {/* 🌟 GradientText integration for his name */}
           <h1 className="hero-name" style={{ fontFamily: "'Inter Tight', sans-serif", fontWeight: 800 }}>
-            <span className="hero-name-wrap" style={{ display: 'block', marginBottom: '8px' }}>
+            <span className="hero-name-wrap" style={{ display: 'inline-flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center', overflow: 'visible' }}>
               <span 
                 className="hero-name-line hero-name-gradient" 
                 style={{ 
@@ -316,8 +314,6 @@ export default function App() {
               >
                 Jai
               </span>
-            </span>
-            <span className="hero-name-wrap" style={{ display: 'block' }}>
               <span 
                 className="hero-name-line hero-name-gradient" 
                 style={{ 
@@ -375,125 +371,7 @@ export default function App() {
           </div>
         </div>
 
-        {/* Right — floating composition */}
-        <div className="hero-right" aria-hidden="true">
-          <div className="hero-composition">
 
-            {/* Location pill */}
-            <div className="fc-wrapper pos-location">
-              <div className="fc fc-location float-C">
-                <span className="fc-loc-dot"></span>
-                Chennai, India
-              </div>
-            </div>
-
-            {/* System Health Card */}
-            <div className="fc-wrapper pos-health">
-              <div className="fc fc-health float-A">
-                <div className="fc-health-header">
-                  <span className="fc-health-title">production-api-server</span>
-                  <span className="fc-health-badge">
-                    <span className="fc-health-badge-dot"></span>Active
-                  </span>
-                </div>
-                <div className="fc-health-metrics">
-                  <div className="fc-health-metric">
-                    <span className="fc-health-num">14ms</span>
-                    <span className="fc-health-lbl">DB Latency</span>
-                  </div>
-                  <div className="fc-health-metric">
-                    <span className="fc-health-num">99.99%</span>
-                    <span className="fc-health-lbl">API Uptime</span>
-                  </div>
-                  <div className="fc-health-metric">
-                    <span className="fc-health-num">32.8k</span>
-                    <span className="fc-health-lbl">Requests</span>
-                  </div>
-                  <div className="fc-health-metric">
-                    <span className="fc-health-num">0.02%</span>
-                    <span className="fc-health-lbl">Err Rate</span>
-                  </div>
-                </div>
-                <div className="fc-chart-container">
-                  <div className="fc-chart-grid">
-                    <div className="fc-chart-bar" style={{ height: '40%' }}></div>
-                    <div className="fc-chart-bar" style={{ height: '55%' }}></div>
-                    <div className="fc-chart-bar" style={{ height: '45%' }}></div>
-                    <div className="fc-chart-bar" style={{ height: '70%' }}></div>
-                    <div className="fc-chart-bar" style={{ height: '60%' }}></div>
-                    <div className="fc-chart-bar" style={{ height: '80%' }}></div>
-                    <div className="fc-chart-bar hi" style={{ height: '95%' }}></div>
-                    <div className="fc-chart-bar" style={{ height: '65%' }}></div>
-                    <div className="fc-chart-bar" style={{ height: '85%' }}></div>
-                    <div className="fc-chart-bar" style={{ height: '75%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* DB Schema Card */}
-            <div className="fc-wrapper pos-query">
-              <div className="fc fc-query float-B">
-                <div className="fc-query-header">
-                  <div className="fc-dots">
-                    <span className="fc-dot fc-dot-r"></span>
-                    <span className="fc-dot fc-dot-y"></span>
-                    <span className="fc-dot fc-dot-g"></span>
-                  </div>
-                  <span className="fc-query-name">schema.prisma</span>
-                </div>
-                <div className="fc-query-body">
-                  <div className="code-line"><span className="code-kw">model</span> <span className="code-class">User</span> &#123;</div>
-                  <div className="code-line">&nbsp;&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-type">String</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-decorator">@id</span></div>
-                  <div className="code-line">&nbsp;&nbsp;email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-type">String</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-decorator">@unique</span></div>
-                  <div className="code-line">&nbsp;&nbsp;role&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-type">Role</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-decorator">@default(USER)</span></div>
-                  <div className="code-line">&nbsp;&nbsp;queries&nbsp;&nbsp;&nbsp;&nbsp;<span className="code-type">Query[]</span></div>
-                  <div className="code-line">&#125;</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Live Build Terminal Card */}
-            <div className="fc-wrapper pos-terminal">
-              <div className="fc fc-terminal float-A">
-                <div className="fc-terminal-header">
-                  <div className="fc-terminal-actions">
-                    <span className="fc-terminal-dot red"></span>
-                    <span className="fc-terminal-dot yellow"></span>
-                    <span className="fc-terminal-dot green"></span>
-                  </div>
-                  <span className="fc-terminal-title">bash · deployment-log</span>
-                </div>
-                <div className="fc-terminal-body">
-                  {terminalLogs.map((log, index) => {
-                    const isSuccess = log.includes("🚀") || log.includes("✓");
-                    const isCommand = log.startsWith("git");
-                    return (
-                      <div key={index} className={`terminal-line ${isSuccess ? 'success' : ''} ${isCommand ? 'command' : ''}`}>
-                        {isCommand && <span className="terminal-prompt">$ </span>}
-                        {log}
-                      </div>
-                    );
-                  })}
-                  <span className="terminal-cursor">█</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Tech pills */}
-            <div className="fc-wrapper pos-pills">
-              <div className="fc-pills float-C">
-                <span className="fc-pill">React</span>
-                <span className="fc-pill">Next.js</span>
-                <span className="fc-pill">Node.js</span>
-                <span className="fc-pill">TypeScript</span>
-                <span className="fc-pill">PostgreSQL</span>
-                <span className="fc-pill">GraphQL</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
 
         {/* Scroll indicator */}
         <div className="hero-scroll" aria-hidden="true">
@@ -606,7 +484,6 @@ export default function App() {
                   </div>
                   <div className="project-actions">
                     <a className="proj-btn primary" href="https://github.com/Jaikishanth22/MED" target="_blank" rel="noopener noreferrer">Source Code</a>
-                    <a className="proj-btn" href="#" onClick={(e) => e.preventDefault()}>Live Demo</a>
                   </div>
                 </div>
               </div>
